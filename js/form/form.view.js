@@ -1,26 +1,25 @@
 // DOM elements
 const elements = {
-	form: document.querySelector("#form"),
-	name: document.querySelector("#name"),
-	phone: document.querySelector("#phone"),
-	email: document.querySelector("#email"),
-	product: document.querySelector("#product"),
-};
-// вставляет тестовые данные в форму
-function insertTestData(data) {
-	elements.name.value = data.name;
-	elements.phone.value = data.phone;
-	elements.email.value = data.email;
-	elements.product.value = data.product;
+    form: document.querySelector('#form'),
+    name: document.querySelector('#name'),
+    phone: document.querySelector('#phone'),
+    email: document.querySelector('#email'),
+    product: document.querySelector('#product'),
 }
 
-function getFormInput() {
-	// объект с данными формы
-	return new FormData(elements.form);
-}
-// очистка формы после добавления заявки
-function clearForm() {
-	elements.form.reset();
+function insertTestData (data){
+    elements.name.value = data.name;
+    elements.phone.value = data.phone;
+    elements.email.value = data.email;
+    elements.product.value = data.product;
 }
 
-export { elements, insertTestData, getFormInput, clearForm };
+function getFormInput (){
+    return new FormData(elements.form)
+}
+
+function clearForm (){
+    elements.form.reset();
+}
+
+export {elements, insertTestData, getFormInput, clearForm }
