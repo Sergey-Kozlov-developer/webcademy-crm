@@ -13,7 +13,7 @@ const testData = [
     new ExampleItem('Василий Пупкин', parseInt('+420776555787'), 'pupkin@mail.ru', 'course-vue'),
     new ExampleItem('Егор Безруков', parseInt('+420772557757'), 'bezrukov@seznam.cz', 'course-wordpress'),
     new ExampleItem('Екатерина Похоменко', parseInt('+420777554717'), 'pochomenko@mail.ru', 'course-php'),
-    new ExampleItem('Валентин Козлюк', parseInt('+420770552577'), 'kozluk@seznam.cz', 'course-vue'),
+    new ExampleItem('Валентин Поршнев', parseInt('+420770552577'), 'kozluk@seznam.cz', 'course-vue'),
     new ExampleItem('Светлана Козырь', parseInt('+420773555727'), 'kozyr@seznam.cz', 'course-html'),
     new ExampleItem('Роман Веселый', parseInt('+420779554747'), 'vesely@seznam.cz', 'course-php'),
 ]
