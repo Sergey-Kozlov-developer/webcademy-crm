@@ -19,7 +19,7 @@ function renderRequests(requests) {
 	for (let request of requests) {
 		const template = `<tr>
                 <th scope="row">${request.id}</th>
-                <td>${request.date}</td>
+                <td>${request.dateToDisplay}</td>
                 <td>${request.productName}</td>
                 <td>${request.name}</td>
                 <td>${request.email}</td>
@@ -55,4 +55,17 @@ function renderBadgeNew(number) {
     }
 }
 
-export {elements, renderRequests, updateStatusLinks, renderBadgeNew}
+function updateFilter (filter){
+    // Фильтр по продукту
+    elements.select.value = filter.products
+
+    // Top status bar
+    elements.topStatusBar.querySelectorAll('a').forEach((link) => link.classList.remove('active'))
+    elements.topStatusBar.querySelector(`a[data-value="${filter.status}"]`).classList.add('active')
+
+    // Left side bar
+    elements.leftStatusLinks.forEach((link) => link.classList.remove('active'))
+    elements.leftPanelNav.querySelector(`a[data-value="${filter.status}"]`).classList.add('active')
+}
+
+export {elements, renderRequests, updateStatusLinks, renderBadgeNew, updateFilter}

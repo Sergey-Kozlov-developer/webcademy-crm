@@ -102,8 +102,8 @@ function loadRequests(){
 
 function getRequests(){
     // отдаем отфильтрованные заявки 
-    const filterRequests = filterRequests(filter)
-    return prepareRequests(filterRequests)
+    return filterRequests(filter)
+    
 }
 
 // функция для изменения даты и статуса
@@ -111,7 +111,7 @@ function prepareRequests (requests){
     return requests.map((item) => {
         return {
             ...item,
-            date: new Date(item.date).toLocaleDateString(),
+            dateToDisplay: new Date(item.date).toLocaleDateString(),
             productName: products[item.product],
             statusName: statuses[item.status],
         }
@@ -139,4 +139,8 @@ function updateRequest(formData) {
     saveRequests(); // сохранили в localStorage
 }
 
-export { addRequest, getRequests, getRequestById, updateRequest, changeFilter, filterRequests, countNewRequests }
+function getFilter(){
+    return {...filter}
+}
+
+export { addRequest, getRequests, getRequestById, updateRequest, changeFilter, filterRequests, countNewRequests, getFilter }
